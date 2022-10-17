@@ -15,6 +15,26 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/constants" />
             <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/home" />
+            <option value="$PROJECT_DIR$/home/home-datasource" />
+            <option value="$PROJECT_DIR$/home/home-domain" />
+            <option value="$PROJECT_DIR$/home/home-interactor" />
+            <option value="$PROJECT_DIR$/home/ui-home" />
+            <option value="$PROJECT_DIR$/profile" />
+            <option value="$PROJECT_DIR$/profile/profile-datasource" />
+            <option value="$PROJECT_DIR$/profile/profile-domain" />
+            <option value="$PROJECT_DIR$/profile/profile-interactor" />
+            <option value="$PROJECT_DIR$/profile/ui-profile" />
+            <option value="$PROJECT_DIR$/search" />
+            <option value="$PROJECT_DIR$/search/search-datasource" />
+            <option value="$PROJECT_DIR$/search/search-domain" />
+            <option value="$PROJECT_DIR$/search/search-interactor" />
+            <option value="$PROJECT_DIR$/search/ui-search" />
+            <option value="$PROJECT_DIR$/uploadprofile" />
+            <option value="$PROJECT_DIR$/uploadprofile/ui-upload" />
+            <option value="$PROJECT_DIR$/uploadprofile/upload-datasource" />
+            <option value="$PROJECT_DIR$/uploadprofile/upload-domain" />
+            <option value="$PROJECT_DIR$/uploadprofile/upload-interactor" />
           </set>
         </option>
       </GradleProjectSettings>
