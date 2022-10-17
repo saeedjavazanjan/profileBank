@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ProfileBank"
 include ':app'
+include ':core'
+include ':constants'
