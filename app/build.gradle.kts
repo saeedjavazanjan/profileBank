@@ -4,8 +4,8 @@ plugins {
 
 }
 android {
-    compileSdk = Android.compileSdk
-    buildToolsVersion = Android.buildTools
+    compileSdk = 32
+    buildToolsVersion = "30.0.3"
     /* dataBinding{
          android.buildFeatures.dataBinding=true
      }*/
