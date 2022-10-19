@@ -7,6 +7,7 @@
       <module name="ProfileBank.buildSrc.main" target="11" />
       <module name="ProfileBank.buildSrc.test" target="11" />
       <module name="ProfileBank.profile.ui-profile" target="11" />
+      <module name="ProfileBank.profilebank.ui-home" target="11" />
       <module name="ProfileBank.search.ui-search" target="11" />
       <module name="ProfileBank.uploadprofile.ui-upload" target="11" />
     </bytecodeTargetLevel>
