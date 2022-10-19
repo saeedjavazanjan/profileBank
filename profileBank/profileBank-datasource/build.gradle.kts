@@ -3,7 +3,7 @@ apply{
 
 }
 dependencies{
-    "implementation"(project(Modules.homeDomain))
+    "implementation"(project(Modules.profileBankDomain))
     "implementation"(Retrofit.core)
     "implementation"(Retrofit.converter)
     "implementation"(Retrofit.okHttpCore)

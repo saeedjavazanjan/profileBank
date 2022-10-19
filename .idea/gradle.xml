@@ -26,6 +26,7 @@
             <option value="$PROJECT_DIR$/profile/profile-domain" />
             <option value="$PROJECT_DIR$/profile/profile-interactor" />
             <option value="$PROJECT_DIR$/profile/ui-profile" />
+            <option value="$PROJECT_DIR$/profileBank" />
             <option value="$PROJECT_DIR$/search" />
             <option value="$PROJECT_DIR$/search/search-datasource" />
             <option value="$PROJECT_DIR$/search/search-domain" />
