@@ -3,7 +3,7 @@ package com.saeed.zanjan.interactor
 import com.saeed.zanjan.datasource.DataService
 
 class Interactor (
-    private val getData: GetData
+     val getData: GetData,
 ) {
     companion object Factory{
         fun build():Interactor{
