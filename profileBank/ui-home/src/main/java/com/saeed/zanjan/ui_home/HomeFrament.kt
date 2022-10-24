@@ -45,9 +45,7 @@ class HomeFragment:Fragment() {
         _binding = HomeFragmentBinding.inflate(inflater, container, false)
         val progressbar=binding.progressbar
         val firstBannersList=binding.firstBannerList
-        val layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        firstBannersList.layoutManager=layoutManager
+
         val getData=Interactor.build().getData
 
         getData.execute().onEach { dataState->
@@ -77,9 +75,10 @@ class HomeFragment:Fragment() {
                             firstBannersList?.visibility = View.VISIBLE
 
                         }
-                      /*  val adapter = Adapter(heros =heros.value)
-                        herolist?.layoutManager = LinearLayoutManager(this@MainActivity)
-                        herolist?.adapter = adapter*/
+                        val adapter = Adapter()
+                        adapter.setRecyclerViewData(dataState.data as MutableList<FirstBanners>)
+                        firstBannersList?.layoutManager = LinearLayoutManager(requireContext())
+                        firstBannersList?.adapter = adapter
                     }
                 }
                 is DataState.Loading -> {
