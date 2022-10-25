@@ -1,5 +1,5 @@
 object Android {
-    const val appId = "com.codingwithmitch.dotainfo"
+    const val appId = "com.saeed.zanjan.profileBank"
     const val compileSdk = 32
     const val buildTools = "30.0.3"
     const val minSdk = 21
