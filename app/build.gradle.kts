@@ -18,7 +18,9 @@ android {
         versionName = Android.versionName
         testInstrumentationRunner ="androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures{
+        dataBinding = true
+    }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
@@ -42,16 +44,14 @@ android {
 
 dependencies{
 
-   // implementation(project(Modules.core))
-  //  implementation(project(Modules.doctorDataSource))
-//    implementation(project(Modules.doctorDomain))
-  //  implementation(project(Modules.doctorInteractors))
+    implementation(project(Modules.core))
+    implementation(project(Modules.profileBankDataSource))
+    implementation(project(Modules.profileBankDomain))
+    implementation(project(Modules.profileBankInteractors))
 
-    //  implementation(project(Modules.ui_heroDetail))
-    //  implementation(project(Modules.ui_heroList))
+      implementation(project(Modules.ui_home))
 
     implementation(Coil.coil)
-    implementation(SqlDelight.androidDriver)
 /*
     implementation(Accompanist.animations)
 */
@@ -59,7 +59,8 @@ dependencies{
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.appCompat)
     implementation(AndroidX.lifecycleVmKtx)
-    implementation(SqlDelight.androidDriver)
+    implementation(Navigation.navigation_fragment)
+    implementation(Navigation.navigation_ui)
     implementation(Google.material)
     implementation("androidx.appcompat:appcompat:1.5.1")
     implementation("com.google.android.material:material:1.4.0")

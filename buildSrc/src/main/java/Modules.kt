@@ -11,7 +11,7 @@ object Modules {
     const val profileBankDataSource = ":profilebank:datasource"
     const val profileBankDomain = ":profilebank:domain"
     const val profileBankInteractors = ":profilebank:interactor"
-    const val ui_home = ":profileBank:ui-home"
+    const val ui_home = ":profilebank:ui-home"
 
 
 

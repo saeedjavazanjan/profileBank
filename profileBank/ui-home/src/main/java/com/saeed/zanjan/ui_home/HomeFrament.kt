@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.saeed.zanjan.core.DataState
 import com.saeed.zanjan.core.ProgressBarState
 import com.saeed.zanjan.core.UiComponent
@@ -26,7 +28,7 @@ class HomeFragment:Fragment() {
     private val firstBanners: MutableState<List<FirstBanners>> = mutableStateOf(listOf())
     private val progressBarState:MutableState<ProgressBarState> = mutableStateOf(ProgressBarState.Idle)
 
-    private var _binding:HomeFragmentBinding?=null
+    private var _binding: HomeFragmentBinding?=null
     private val binding get() = _binding!!
 
     override fun onAttach(context: Context) {
@@ -42,9 +44,10 @@ class HomeFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = HomeFragmentBinding.inflate(inflater, container, false)
-        val progressbar=binding.progressbar
-        val firstBannersList=binding.firstBannerList
+       // val view=inflater.inflate(R.layout.home_fragment,container,false)
+        _binding =HomeFragmentBinding .inflate(inflater, container, false)
+        val progressbar=binding.progressbar//view.findViewById<ProgressBar>(R.id.progressbar)
+        val firstBannersList=binding.firstBannerList//view.findViewById<RecyclerView>(R.id.first_banner_list)
 
         val getData=Interactor.build().getData
 

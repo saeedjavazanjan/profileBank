@@ -17,6 +17,8 @@ dependencies{
     "implementation"(AndroidX.coreKtx)
     "implementation"(AndroidX.appCompat)
     "implementation"(AndroidX.lifecycleVmKtx)
+    "implementation"(Navigation.navigation_fragment)
+    "implementation"(Navigation.navigation_ui)
     "implementation"(Google.material)
     "implementation"("androidx.appcompat:appcompat:1.5.1")
     "implementation"("com.google.android.material:material:1.4.0")
