@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class DataServiceImpl(
     private val httpClient: OkHttpClient
 ):DataService {
-    override fun getFirstBannersState(): List<FirstBanners> {
+    override suspend fun getFirstBannersState(): List<FirstBanners> {
         val retrofit= Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

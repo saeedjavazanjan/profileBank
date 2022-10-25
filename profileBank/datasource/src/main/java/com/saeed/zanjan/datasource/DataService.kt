@@ -9,10 +9,11 @@ import java.util.concurrent.TimeUnit
 
 interface DataService {
     @GET(FIRST_BANNERS_STATE)
-    fun getFirstBannersState():List<FirstBanners>
+   suspend fun getFirstBannersState():List<FirstBanners>
 
     companion object Factory{
         fun build():DataService{
+
             val interceptor  = HttpLoggingInterceptor()
                 .setLevel(HttpLoggingInterceptor.Level.BODY)
 

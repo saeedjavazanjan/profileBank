@@ -27,7 +27,7 @@ class GetData(
                         )))
                     listOf()
                 }
-
+                emit(DataState.Data(banners))
             }catch (e:Exception){
                 e.printStackTrace()
                 emit(DataState.Response<List<FirstBanners>>(

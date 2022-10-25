@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.fragment.app.Fragment
@@ -58,6 +59,11 @@ class HomeFragment:Fragment() {
                         is UiComponent.Dialog -> {
                         }
                         is UiComponent.None -> {
+                            GlobalScope.launch(Dispatchers.Main)
+                            {
+                                 Toast.makeText(requireContext(),(dataState.uiComponent as UiComponent.None).message,Toast.LENGTH_SHORT).show()
+
+                            }
 
                         }
                     }
@@ -76,11 +82,12 @@ class HomeFragment:Fragment() {
                         if (dataState is DataState.Data){
                             progressbar?.visibility = View.GONE
                             firstBannersList?.visibility = View.VISIBLE
+                            firstBanners.value=dataState.data?: listOf()
 
                         }
                         val adapter = Adapter()
                         adapter.setRecyclerViewData(dataState.data as MutableList<FirstBanners>)
-                        firstBannersList?.layoutManager = LinearLayoutManager(requireContext())
+                        firstBannersList?.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
                         firstBannersList?.adapter = adapter
                     }
                 }
