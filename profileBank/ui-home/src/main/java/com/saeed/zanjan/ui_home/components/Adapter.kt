@@ -1,14 +1,16 @@
-package com.saeed.zanjan.ui_home
+package com.saeed.zanjan.ui_home.components
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.compose.runtime.MutableState
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.saeed.zanjan.domain.FirstBanners
+import com.saeed.zanjan.ui_home.ListState
 import com.saeed.zanjan.ui_home.databinding.BannersItemBinding
 
 class Adapter :RecyclerView.Adapter<Adapter.ViewHolder>() {
-    private lateinit var recyclerViewData: MutableList<FirstBanners>
+    private lateinit var recyclerViewData: List<FirstBanners>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding=BannersItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -24,7 +26,7 @@ class Adapter :RecyclerView.Adapter<Adapter.ViewHolder>() {
 
         return recyclerViewData.size
     }
-    fun setRecyclerViewData(recyclerViewData: MutableList<FirstBanners>) {
+    fun setRecyclerViewData(recyclerViewData: List<FirstBanners>) {
 
         this.recyclerViewData=recyclerViewData
     }

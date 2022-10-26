@@ -1,7 +1,11 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 plugins {
     id("com.android.application")
     kotlin("android")
-
+    kotlin("kapt")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 android {
     compileSdk = 32
@@ -62,6 +66,8 @@ dependencies{
     implementation(Navigation.navigation_fragment)
     implementation(Navigation.navigation_ui)
     implementation(Google.material)
+    implementation(Hilt.android)
+    "kapt"(Hilt.compiler)
     implementation("androidx.appcompat:appcompat:1.5.1")
     implementation("com.google.android.material:material:1.4.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
