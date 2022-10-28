@@ -9,8 +9,8 @@ import com.saeed.zanjan.domain.FirstBanners
 import com.saeed.zanjan.ui_home.ListState
 import com.saeed.zanjan.ui_home.databinding.BannersItemBinding
 
-class Adapter :RecyclerView.Adapter<Adapter.ViewHolder>() {
-    private lateinit var recyclerViewData: List<FirstBanners>
+class Adapter (val banners:List<FirstBanners>):RecyclerView.Adapter<Adapter.ViewHolder>() {
+  //  private lateinit  var recyclerViewData: List<FirstBanners>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding=BannersItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -19,17 +19,17 @@ class Adapter :RecyclerView.Adapter<Adapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binder(recyclerViewData[position])
+        holder.binder(banners[position])
     }
 
     override fun getItemCount(): Int {
 
-        return recyclerViewData.size
+        return banners.size
     }
-    fun setRecyclerViewData(recyclerViewData: List<FirstBanners>) {
+   /* fun setRecyclerViewData(recyclerViewData: List<FirstBanners>) {
 
         this.recyclerViewData=recyclerViewData
-    }
+    }*/
     class ViewHolder(val binding: BannersItemBinding):RecyclerView.ViewHolder(binding.root){
 
 
