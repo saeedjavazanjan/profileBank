@@ -48,8 +48,7 @@ constructor(
                         }
                         is UiComponent.None -> {
 
-
-                       //     _state.value = _state.value?.copy(response = dataState.uiComponent)!!
+                            _state.value = _state.value?.copy(response = (dataState.uiComponent as UiComponent.None).message)!!
 
                         }
                     }
