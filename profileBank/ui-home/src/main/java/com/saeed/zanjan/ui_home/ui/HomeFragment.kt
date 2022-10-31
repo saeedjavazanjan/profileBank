@@ -11,6 +11,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.saeed.zanjan.core.DataState
+import com.saeed.zanjan.core.ProgressBarState
+import com.saeed.zanjan.core.UiComponent
 import com.saeed.zanjan.domain.FirstBanners
 import com.saeed.zanjan.interactor.GetData
 import com.saeed.zanjan.interactor.Interactor
@@ -45,39 +48,30 @@ class HomeFragment:Fragment() {
         val progressBar=binding.progressbar
         val viewModel=ViewModelProvider(this)[HomeFragmentViewModel::class.java]
 
-        val listObserver = Observer<MutableState<ListState>> { list ->
+        val stateObserver = Observer<MutableState<ListState>> { state ->
             val adapter = BannersAdapter()
 
-            if (list.equals(list.value.progressBarState)){
+
+            if(state.value.firstBanners.isEmpty() && state.value.progressBarState.equals(ProgressBarState.Loading)) {
                 progressBar.visibility = View.VISIBLE
-                recycler.visibility=View.GONE
+                recycler.visibility = View.GONE
+            }else if(state.value.firstBanners.isNotEmpty()){
+                    progressBar.visibility = View.GONE
+                    recycler.visibility=View.VISIBLE
+                    adapter.setRecyclerData(state.value.firstBanners)
+                    recycler.layoutManager = LinearLayoutManager(requireContext())
+                    recycler.adapter = adapter
 
-            }else if (list.equals(list.value.firstBanners)){
-                progressBar.visibility = View.GONE
-                recycler.visibility=View.VISIBLE
-                adapter.setRecyclerData(list.value.firstBanners)
-                recycler.layoutManager = LinearLayoutManager(requireContext())
-                recycler.adapter = adapter
+                } else if(state.value.response !="" &&  state.value.firstBanners.isEmpty()) {
+                    progressBar.visibility=View.GONE
+                Toast.makeText(requireContext(),state.value.response,Toast.LENGTH_SHORT).show()
+
+                }
+
             }
 
 
-            when(list){
-                list.value.progressBarState->{
-
-
-
-                }
-                list.value.firstBanners->{
-
-
-                }
-              /*  list.value.response->{
-                    Toast.makeText(requireContext(),list.value.response.toString(),Toast.LENGTH_SHORT).show()
-                }*/
-            }
-
-        }
-        viewModel.state.observe(viewLifecycleOwner, listObserver)
+        viewModel.state.observe(viewLifecycleOwner, stateObserver)
 
 
 
