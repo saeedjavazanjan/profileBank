@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/profilebank/domain" />
             <option value="$PROJECT_DIR$/profilebank/interactor" />
             <option value="$PROJECT_DIR$/profilebank/ui-home" />
+            <option value="$PROJECT_DIR$/profilebank/ui-player" />
           </set>
         </option>
       </GradleProjectSettings>
