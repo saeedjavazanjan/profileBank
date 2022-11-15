@@ -3,11 +3,10 @@ package com.saeed.zanjan.interactor
 import com.saeed.zanjan.core.DataState
 import com.saeed.zanjan.core.ProgressBarState
 import com.saeed.zanjan.core.UiComponent
-import com.saeed.zanjan.datasource.DataService
+import com.saeed.zanjan.datasource.network.DataService
 import com.saeed.zanjan.domain.FirstBanners
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import java.util.concurrent.CompletionService
 
 class GetData(
     private val service: DataService
