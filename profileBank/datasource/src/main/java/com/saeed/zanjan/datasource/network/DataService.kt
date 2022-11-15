@@ -1,6 +1,6 @@
-package com.saeed.zanjan.datasource
+package com.saeed.zanjan.datasource.network
 
-import com.saeed.zanjan.datasource.EndPoints.FIRST_BANNERS_STATE
+import com.saeed.zanjan.datasource.network.EndPoints.FIRST_BANNERS_STATE
 import com.saeed.zanjan.domain.FirstBanners
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -12,7 +12,7 @@ interface DataService {
    suspend fun getFirstBannersState():List<FirstBanners>
 
     companion object Factory{
-        fun build():DataService{
+        fun build(): DataService {
 
             val interceptor  = HttpLoggingInterceptor()
                 .setLevel(HttpLoggingInterceptor.Level.BODY)

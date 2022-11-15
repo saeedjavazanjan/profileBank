@@ -1,4 +1,4 @@
-package com.saeed.zanjan.datasource
+package com.saeed.zanjan.datasource.network
 
 object EndPoints {
     const val BASE_URL="http://devejumpgroup.ir"

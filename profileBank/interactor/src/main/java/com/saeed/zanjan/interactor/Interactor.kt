@@ -1,6 +1,6 @@
 package com.saeed.zanjan.interactor
 
-import com.saeed.zanjan.datasource.DataService
+import com.saeed.zanjan.datasource.network.DataService
 
 class Interactor (
      val getData: GetData,
